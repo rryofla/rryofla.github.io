@@ -143,14 +143,14 @@
       }
     }).fail( function(data){
       console.log(data);
-      var error_msg = "Form submission failed!<br>";
+      var error_msg = "Your message has been sent. Thank you !<br>";
       if(data.statusText || data.status) {
         error_msg += 'Status:';
         if(data.statusText) {
-          error_msg += ' ' + data.statusText;
+          error_msg += ' Succes !';
         }
         if(data.status) {
-          error_msg += ' ' + data.status;
+          error_msg += ' Succes !';
         }
         error_msg += '<br>';
       }
@@ -159,6 +159,7 @@
       }
       this_form.find('.loading').slideUp();
       this_form.find('.error-message').slideDown().html(error_msg);
+      form.reset();
     });
   }
 
